@@ -5,13 +5,13 @@
 #include <iostream>
 
 class Currency {
-    // Abstract class
+    // Abstract class (/!\ is actually not bc no pure virtual function)
     private:
         std::string _currency;
 
     public:
         // Constructor
-        Currency() {};
+        virtual Currency() {};
         // Destructor
         virtual ~Currency() {};
         // Getters
@@ -19,6 +19,7 @@ class Currency {
         // Setters
         void setCurrency(std::string currency) {_currency = currency;};
         // Others
+        
 };
 
 class ReferenceCurrency: public Currency {
@@ -33,6 +34,7 @@ class ReferenceCurrency: public Currency {
         // Setters
         // Getters
         // Others
+        // Operators
         friend std::ostream& operator<<(std::ostream& ostream, const ReferenceCurrency& currency);
 };
 
@@ -49,10 +51,9 @@ class OtherCurrency: public Currency {
         // Getters
         double getExchangeRate() const {return _exchangeRate;};
         // Others
+        // Operators
         friend std::ostream& operator<<(std::ostream& ostream, const OtherCurrency& currency);
 
 };
-
-
 
 #endif

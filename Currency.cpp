@@ -1,7 +1,9 @@
 #include "Currency.h"
+
 #include <string>
 #include <iostream>
 
+// Constructors
 ReferenceCurrency::ReferenceCurrency(std::string currency) {
     Currency::setCurrency(currency);
 }
