@@ -2,6 +2,7 @@
 #define CURRENCY_H
 
 #include <string>
+#include <iostream>
 
 class Currency {
     // Abstract class
@@ -12,11 +13,12 @@ class Currency {
         // Constructor
         Currency() {};
         // Destructor
-        virtual ~Currency() = 0;
+        virtual ~Currency() {};
         // Getters
-        std::string getCurrency() {return _currency;};
+        std::string getCurrency() const {return _currency;};
         // Setters
         void setCurrency(std::string currency) {_currency = currency;};
+        // Others
 };
 
 class ReferenceCurrency: public Currency {
@@ -28,9 +30,10 @@ class ReferenceCurrency: public Currency {
         ReferenceCurrency(std::string currency);
         // Destructor
         ~ReferenceCurrency() {};
-        // Setter
-        // Getter
-
+        // Setters
+        // Getters
+        // Others
+        friend std::ostream& operator<<(std::ostream& ostream, const ReferenceCurrency& currency);
 };
 
 class OtherCurrency: public Currency {
@@ -41,10 +44,12 @@ class OtherCurrency: public Currency {
         OtherCurrency(std::string currency, double exchangeRate);
         // Destructor
         ~OtherCurrency() {};
-        // Setter
+        // Setters
         void setExchangeRate(double exchangeRate) {_exchangeRate = exchangeRate;};
-        // Getter
-        double getExchangeRate() {return _exchangeRate;};
+        // Getters
+        double getExchangeRate() const {return _exchangeRate;};
+        // Others
+        friend std::ostream& operator<<(std::ostream& ostream, const OtherCurrency& currency);
 
 };
 
