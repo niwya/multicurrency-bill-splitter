@@ -11,7 +11,7 @@ class Currency {
 
     public:
         // Constructor
-        virtual Currency() {};
+        Currency() {};
         // Destructor
         virtual ~Currency() {};
         // Getters

@@ -11,6 +11,8 @@ class User {
         double _total;
     public:
         // Constructor
+        User() {};
+        User(std::string name): _name(name) {};
         User(std::string name, Currency currency): _name(name), _currency(currency) {};
         // Destructor
         ~User() {};

@@ -25,8 +25,8 @@ int main() {
     std::cin >> mainName;
     ReferenceCurrency billCurrency(mainName);
     currencies[mainName] = billCurrency;
-    // Ask for the names and exchange rates to reference currencies
-    
+
+    // Ask for the names and exchange rates to reference currencies, if there is more than 1 currency
     if (nCurrencies > 1) {
         for (int i = 0; i<nCurrencies-1; i++) {
             std::string name;
@@ -39,19 +39,27 @@ int main() {
             currencies[name] = currentCurrency;
         }
     }
-    // Ask for the bill payers' names and currencies
+
+    // Ask for the bill payers' names and currencies (if there is more than 1 currency)
     std::map<std::string, User> users;
     for (int i=0; i<nUsers; i++) {
         std::string userName;
-        std::string currencyName;
         std::cout << "Who is bill payer " << std::to_string(i+1) << "?" << std::endl;
         std::cin >> userName;
+        User currentUser(userName);
+        // Warn the user in case there is a duplicate userName, and retry
+        while (users.find(userName)!=users.end()) {
+            std::cout << "User already exists - give another name." << std::endl;
+            std::cin >> userName;
+        }
+        users[userName] = currentUser; 
         if (nCurrencies > 1) {
+            std::string currencyName;
             std::cout << "What currency is " << userName << " going to use?" << std::endl;
             std::cin >> currencyName;
         }
         else {
-            // default to reference currency
+            
         }
         
        // CALL USER CTOR
