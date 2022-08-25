@@ -1,11 +1,14 @@
 #include "Currency.h"
 #include <string>
 
-Currency::Currency(std::string currency, float exchangeRate) {
-    _currency = currency;
-    _exchangeRate = exchangeRate;
-};
+Currency::~Currency() {
+}
 
-void Currency::setExchangeRate(float exchangeRate) {
+ReferenceCurrency::ReferenceCurrency(std::string currency) {
+    Currency::setCurrency(currency);
+}
+
+OtherCurrency::OtherCurrency(std::string currency, float exchangeRate) {
+    Currency::setCurrency(currency);
     _exchangeRate = exchangeRate;
-};
+}

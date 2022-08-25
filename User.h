@@ -7,7 +7,7 @@
 class User {
     private:
         std::string _name;
-        Currency _currency;
+        OtherCurrency _currency;
         float _grandTotal;
     public:
         // Constructor
