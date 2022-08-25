@@ -8,12 +8,9 @@ class Currency {
     private:
         std::string _currency;
 
-    protected:
-        // Constructor
-        Currency();
-        Currency(std::string currency) {_currency = currency;};
-
     public:
+        // Constructor
+        Currency() {};
         // Destructor
         virtual ~Currency() = 0;
         // Getters
@@ -23,7 +20,7 @@ class Currency {
 };
 
 class ReferenceCurrency: public Currency {
-    // Singleton 
+    // Singleton (not yet implemented)
     private:
         // Does not have an exchange rate since it will be the reference (1.0)
     public:
@@ -38,16 +35,16 @@ class ReferenceCurrency: public Currency {
 
 class OtherCurrency: public Currency {
     private:
-        float _exchangeRate;
+        double _exchangeRate;
     public:
         // Constructor
-        OtherCurrency(std::string currency, float exchangeRate);
+        OtherCurrency(std::string currency, double exchangeRate);
         // Destructor
         ~OtherCurrency() {};
         // Setter
-        void setExchangeRate(float exchangeRate) {_exchangeRate = exchangeRate;};
+        void setExchangeRate(double exchangeRate) {_exchangeRate = exchangeRate;};
         // Getter
-        float getExchangeRate() {return _exchangeRate;};
+        double getExchangeRate() {return _exchangeRate;};
 
 };
 

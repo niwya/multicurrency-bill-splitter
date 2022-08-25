@@ -8,7 +8,7 @@ class User {
     private:
         std::string _name;
         OtherCurrency _currency;
-        float _grandTotal;
+        double _grandTotal;
     public:
         // Constructor
         // Getters

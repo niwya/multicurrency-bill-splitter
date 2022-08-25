@@ -1,6 +1,6 @@
 #include "Currency.h"
-#include "User.h"
-#include "Bill.h"
+// #include "User.h"
+// #include "Bill.h"
 #include <string>
 #include <iostream>
 #include <map>
@@ -20,18 +20,18 @@ int main() {
     std::string mainName;
     std::cout << "What is the bill currency?" << std::endl;
     std::cin >> mainName;
-    ReferenceCurrency billCurrency {mainName};
+    ReferenceCurrency billCurrency(mainName);
     
     // Ask for the names and exchange rates to reference currencies
     std::map<std::string, OtherCurrency> currencies;
     for (int i = 0; i<nCurrencies-1; i++) {
         std::string name;
-        float exchangeRate;
+        double exchangeRate;
         std::cout << "Details for currency " << std::to_string(i+1) << ":\nName?" << std::endl; 
         std::cin >> name;
-        std::cout << "Exchange rate? Reference is USD." << std::endl;
+        std::cout << "Exchange rate? Reference is " << billCurrency.getCurrency() << "." << std::endl;
         std::cin >> exchangeRate;
-        OtherCurrency currentCurrency {name, exchangeRate};
+        OtherCurrency currentCurrency(name, exchangeRate);
     }
     // Ask for the bill payers' names and currencies
     // std::map<std::string, User> users;
@@ -48,5 +48,5 @@ int main() {
 
     // Output who owes what in their respective currency
     std::cout << "__________" << std::endl;
-
+    return 0;
 }

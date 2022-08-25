@@ -8,7 +8,7 @@ ReferenceCurrency::ReferenceCurrency(std::string currency) {
     Currency::setCurrency(currency);
 }
 
-OtherCurrency::OtherCurrency(std::string currency, float exchangeRate) {
+OtherCurrency::OtherCurrency(std::string currency, double exchangeRate) {
     Currency::setCurrency(currency);
     _exchangeRate = exchangeRate;
 }

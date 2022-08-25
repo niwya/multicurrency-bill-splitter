@@ -8,7 +8,7 @@
 class Item {
     public:
         std::string _itemName;
-        float _itemPrice;
+        double _itemPrice;
     private:
         // Constructor
         // Getters
@@ -19,7 +19,7 @@ class Item {
 class Bill {
     public:
         std::vector<Item> _itemList;
-        float _billTotal;
+        double _billTotal;
         ReferenceCurrency _billCurrency;
     private:
         // Constructor
