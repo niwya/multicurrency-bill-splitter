@@ -1,6 +1,6 @@
+#include <User.h>
 #include <Currency.h>
 #include <Bill.h>
-#include <USer.h>
 
 #include <string>
 #include <iostream>

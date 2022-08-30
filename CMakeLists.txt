@@ -4,7 +4,7 @@ project(BillSplitter)
 
 add_executable(${PROJECT_NAME} 
     src/main.cpp)
-
-add_subdirectory(dependancies EXCLUDE_FROM_ALL)
-target_link_libraries(${PROJECT_NAME} PRIVATE dependancies)
-target_link_directories(${PROJECT_NAME} PRIVATE dependancies)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dependancies)
+add_subdirectory(dependancies)
+target_link_libraries(${PROJECT_NAME} PUBLIC dependancies)
+target_link_directories(${PROJECT_NAME} PUBLIC dependancies)
