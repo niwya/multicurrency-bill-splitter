@@ -1,2 +1,8 @@
 # Ignore all executables
 *.exe
+
+# Ignore project memo
+memo.txt
+
+# Ignore build folder
+build

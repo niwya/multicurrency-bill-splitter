@@ -51,6 +51,7 @@ class OtherCurrency: public Currency {
         // Getters
         double getExchangeRate() const {return _exchangeRate;};
         // Others
+        double convertTo(const OtherCurrency& currency) const; // IMPLEMENT THIS TO GET CONVERSION RATE BETWEEN 2
         // Operators
         friend std::ostream& operator<<(std::ostream& ostream, const OtherCurrency& currency);
 
