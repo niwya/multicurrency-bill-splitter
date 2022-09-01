@@ -53,17 +53,16 @@ int main() {
             std::cout << "User already exists - give another name." << std::endl;
             std::cin >> userName;
         }
-        users[userName] = currentUser; 
         if (nCurrencies > 1) {
             std::string currencyName;
             std::cout << "What currency is " << userName << " going to use?" << std::endl;
             std::cin >> currencyName;
+            currentUser.setCurrency(currencies[currencyName]);
         }
         else {
-            
+            currentUser.setCurrency(billCurrency);
         }
-        
-       // CALL USER CTOR
+        users[userName] = currentUser;
     }
     // Ask for the details of the bill
 

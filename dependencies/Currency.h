@@ -16,9 +16,11 @@ class Currency {
         virtual ~Currency() {};
         // Getters
         std::string getCurrency() const {return _currency;};
+        virtual double getExchangeRate() const {return -1.0;}; // does not work as pure virtual (as it should) bc _currency member of User (-> need to force the instanciation with name + currency!!)
         // Setters
         void setCurrency(std::string currency) {_currency = currency;};
         // Others
+        double convertTo(const Currency& currency) const;
         
 };
 
@@ -28,11 +30,13 @@ class ReferenceCurrency: public Currency {
         // Does not have an exchange rate since it will be the reference (1.0)
     public:
         // Constructor
+        ReferenceCurrency() {this->setCurrency("USD");}; // DEFAULT IS USD -> HARDCODED /!\ 
         ReferenceCurrency(std::string currency);
         // Destructor
         ~ReferenceCurrency() {};
         // Setters
         // Getters
+        double getExchangeRate() const {return 1.0;};
         // Others
         // Operators
         friend std::ostream& operator<<(std::ostream& ostream, const ReferenceCurrency& currency);
@@ -51,7 +55,6 @@ class OtherCurrency: public Currency {
         // Getters
         double getExchangeRate() const {return _exchangeRate;};
         // Others
-        double convertTo(const OtherCurrency& currency) const; // IMPLEMENT THIS TO GET CONVERSION RATE BETWEEN 2
         // Operators
         friend std::ostream& operator<<(std::ostream& ostream, const OtherCurrency& currency);
 

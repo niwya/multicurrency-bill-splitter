@@ -17,9 +17,9 @@ class User {
         // Destructor
         ~User() {};
         // Getters
-        std::string getName() {return _name;};
-        Currency getCurrency() {return _currency;};
-        double getTotal() {return _total;};
+        std::string getName() const {return _name;};
+        Currency getCurrency() const {return _currency;};
+        double getTotal() const {return _total;};
         // Setters
         void setName(std::string name) {_name = name;};
         void setCurrency(Currency currency) {_currency = currency;};

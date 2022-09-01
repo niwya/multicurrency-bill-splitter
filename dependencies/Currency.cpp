@@ -23,3 +23,8 @@ std::ostream& operator<<(std::ostream& ostream, const OtherCurrency& currency) {
     ostream << currency.getCurrency() << " (Exchange rate to reference " << std::to_string(currency.getExchangeRate()) << ").";
     return ostream;
 }
+
+// Others
+double Currency::convertTo(const Currency& currency) const {
+    return currency.getExchangeRate() / this->getExchangeRate();
+}
