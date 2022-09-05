@@ -1,5 +1,6 @@
 # Ignore all executables
 *.exe
+/tests/testCurrency
 
 # Ignore project memo
 memo.txt
