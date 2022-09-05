@@ -21,5 +21,6 @@ void Bill::addItem(Item newItem) {
     this->_itemList.push_back(newItem);
 }
 std::ostream& operator<<(std::ostream& ostream, const Bill& bill) {
-    // do
+    // IMPLEMENT
+    return ostream;
 }

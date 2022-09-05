@@ -8,5 +8,8 @@ add_executable(${PROJECT_NAME}
     src/main.cpp)
     
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dependencies)
-
 target_link_libraries(${PROJECT_NAME} PRIVATE Dependencies)
+
+# addind testing
+add_executable(Tests tests/test.cpp)
+#
