@@ -26,8 +26,3 @@ TEST_CASE("Other currency has name and exchange rate to reference currency decla
     REQUIRE(otherCurrency.getCurrency() == "EUR");
     REQUIRE(otherCurrency.getExchangeRate() == .99);
 }
-
-// Compile & run:
-// g++ -std=c++11 -Wall -o testCurrency testCurrency.cpp
-// then run testCurrency
-// FROM WITHIN THE TEST FOLDER > does not work with CMake yet
