@@ -30,8 +30,8 @@ class ReferenceCurrency: public Currency {
         // Does not have an exchange rate since it will be the reference (1.0)
     public:
         // Constructor
-        ReferenceCurrency() {this->setCurrency("USD");}; // DEFAULT IS USD -> HARDCODED /!\ 
-        ReferenceCurrency(std::string currency);
+        ReferenceCurrency() {this->setCurrency("USD");}; // DEFAULT IS USD -> HARDCODED
+        ReferenceCurrency(std::string currency) {setCurrency(currency);};;
         // Destructor
         ~ReferenceCurrency() {};
         // Setters
@@ -47,7 +47,7 @@ class OtherCurrency: public Currency {
         double _exchangeRate;
     public:
         // Constructor
-        OtherCurrency(std::string currency, double exchangeRate);
+        OtherCurrency(std::string currency, double exchangeRate): _exchangeRate(exchangeRate) {setCurrency(currency);};
         // Destructor
         ~OtherCurrency() {};
         // Setters
