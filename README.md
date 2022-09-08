@@ -11,8 +11,11 @@ As of now:
 cmake ../
 cmake --build .
 ```
-4. Go in *build/Debug* and run *BillSplitter.exe* - it should open a terminal and asking for your input
+4. Go in *build/Debug* and run *BillSplitter.exe* - from a console. It should ask for your input. Also, if you run *tests.exe* from the same repository, it should automatically provide you with the results of all unit tests performed. 
 
 ## To do list
-- [ ] 
-- [ ]
+- [ ] Write more unit tests and figure out how to properly call the custom library in the tests
+- [ ] Finish implementing all the functions in the custom library
+- [ ] Finish implementing main
+- [ ] GUI with Qt
+- [ ] Automate fetching the current exchange rate
