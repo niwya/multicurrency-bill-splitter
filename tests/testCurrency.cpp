@@ -1,8 +1,8 @@
 // Let Catch provide main():
 #define CATCH_CONFIG_MAIN
 
-#include "../include/catch.hpp"
-#include "../dependencies/Currency.h" // bad way to import it
+#include "../include/catch.hpp" // actually need to include the header file to the build, else it fails, FIND BETTER ALTERNATIVE
+#include <Currency.h>
 
 #include <string>
 
