@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 #include <map>
+#include <memory>
 
 int main() {
     // Decorative
@@ -57,10 +58,10 @@ int main() {
             std::string currencyName;
             std::cout << "What currency is " << userName << " going to use?" << std::endl;
             std::cin >> currencyName;
-            currentUser.setCurrency(currencies[currencyName]);
+            // currentUser.setCurrency(&currencies[currencyName]); // will need to store currencies[name] = smart ptr to currency = change the loop where we ask for the currency
         }
         else {
-            currentUser.setCurrency(billCurrency);
+            // currentUser.setCurrency(&billCurrency);
         }
         users[userName] = currentUser;
     }

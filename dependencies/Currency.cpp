@@ -15,6 +15,9 @@ std::ostream& operator<<(std::ostream& ostream, const OtherCurrency& currency) {
 }
 
 // Others
+inline double round3Digits(double val) {
+        return std::round(val*1000.0) / 1000.0;
+    };
 double Currency::convertTo(const Currency& currency) const {
-    return currency.getExchangeRate() / this->getExchangeRate();
+    return round3Digits(this->getExchangeRate() / currency.getExchangeRate());
 }

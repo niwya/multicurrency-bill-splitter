@@ -5,7 +5,6 @@
 #include <iostream>
 
 class Currency {
-    // Abstract class (/!\ is actually not bc no pure virtual function)
     private:
         std::string _currency;
 
@@ -16,7 +15,7 @@ class Currency {
         virtual ~Currency() {};
         // Getters
         std::string getCurrency() const {return _currency;};
-        virtual double getExchangeRate() const {return -1.0;}; // does not work as pure virtual (as it should) bc _currency member of User (-> need to force the instanciation with name + currency!!)
+        virtual double getExchangeRate() const = 0;
         // Setters
         void setCurrency(std::string currency) {_currency = currency;};
         // Others
